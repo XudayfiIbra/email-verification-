@@ -6,17 +6,17 @@
     <title>email-verification</title>
   </head>
   <body>
-    {% for message in messages %}  
+    {% for message in messages %}
 
-      <div class="{{message.tags}}">
-        <h5>{{message}}</h5>
-      </div>
-        
+    <div class="{{message.tags}}">
+      <h5>{{message}}</h5>
+    </div>
+
     {% endfor %}
     <h1>Welcome, please signup</h1>
     <form action="" method="POST">
       {% csrf_token %} {% for field in form %} {% if field.errors %}
-        
+
       <div class="mb-3">
         <small>{{field.errors}}</small>
       </div>
@@ -25,7 +25,8 @@
 
       <div>{{field}}</div>
 
-      {% endif %} {% endfor %}
+      {% endif %} 
+      {% endfor %}
     </form>
     <button type="submit">Register</button>
   </body>

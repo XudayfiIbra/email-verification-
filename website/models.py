@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 import secrets
+
+
 class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
     
